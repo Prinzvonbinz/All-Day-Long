@@ -1,0 +1,155 @@
+body {
+  background: #111;
+  color: #fff;
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px 0 20px;
+  position: relative;
+}
+
+#countrySelect {
+  background: #222;
+  color: #fff;
+  border: none;
+  font-size: 1.1em;
+  border-radius: 6px;
+  padding: 6px 10px;
+  outline: none;
+}
+
+#clock {
+  font-size: 1.3em;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 1px;
+}
+
+#trophyBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  padding: 0;
+}
+#trophyBtn:hover {
+  opacity: 1;
+}
+#trophyIcon {
+  width: 32px;
+  height: 32px;
+  filter: grayscale(80%) brightness(1.2) opacity(0.7);
+}
+
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#dateDisplay {
+  font-size: 3em;
+  font-weight: bold;
+  letter-spacing: 2px;
+  background: rgba(20,20,20,0.85);
+  padding: 18px 36px;
+  border-radius: 12px;
+  box-shadow: 0 0 24px #000c;
+}
+
+#achievementModal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+#achievementModal.hidden {
+  display: none;
+}
+.modal-content {
+  background: #181a1b;
+  border-radius: 14px;
+  padding: 2.5em 2em 2em 2em;
+  min-width: 300px;
+  max-width: 95vw;
+  min-height: 280px;
+  position: relative;
+  box-shadow: 0 2px 32px #000a;
+}
+#closeAchievements {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  font-size: 1.5em;
+  background: none;
+  border: none;
+  color: #eee;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+#closeAchievements:hover {
+  opacity: 1;
+}
+
+#achievementTree {
+  margin: 1.2em auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2em;
+}
+.achievement-node {
+  background: #222;
+  border-radius: 8px;
+  padding: 0.8em 2em;
+  margin: 0.2em 0;
+  color: #ddd;
+  font-size: 1.07em;
+  box-shadow: 0 2px 8px #0005;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  opacity: 0.65;
+  position: relative;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.15s, opacity 0.15s;
+}
+.achievement-node.unlocked {
+  background: #2d4;
+  color: #162;
+  opacity: 1;
+  border: 2px solid #4f7;
+}
+.achievement-node.locked {
+  cursor: default;
+  filter: grayscale(95%) brightness(0.7);
+}
+.achievement-node .emoji {
+  font-size: 1.4em;
+}
+
+@media (max-width: 600px) {
+  #dateDisplay { font-size: 2em; padding: 12px 10px;}
+  .modal-content { padding: 1em 0.3em;}
+  #achievementTree { gap: 0.7em;}
+  .achievement-node { padding: 0.5em 0.8em; font-size: 1em;}
+}
