@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>All Day Long</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <select id="countrySelect"></select>
+      <div id="clock"></div>
+      <button id="trophyBtn" aria-label="Erfolge ansehen">
+        <img src="trophy.svg" alt="Trophäe" id="trophyIcon"/>
+      </button>
+    </header>
+    <main>
+      <div id="dateDisplay"></div>
+    </main>
+    <div id="achievementModal" class="hidden">
+      <div class="modal-content">
+        <button id="closeAchievements">×</button>
+        <h2>Erfolgs-Baum – <span id="achievementCountry"></span></h2>
+        <div id="achievementTree"></div>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
